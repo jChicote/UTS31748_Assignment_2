@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
+        <script src="js/vehicle_list_loader.js"></script>
+
+        <!-- Runs Preliminary tasks first -->
+        <script>
+            loadJSONData();
+        </script>
+
         <!-- Navigation Bar -->
         <div class="nav-bar sticky">
 
@@ -15,9 +22,21 @@
         <!-- Car Display Grid -->
         <div class="main-content-container">
             <div class="grid-car-container">
-                <div class="grid-car-cell">Cell</div>
-                <div class="grid-car-cell">Cell</div>
-                <div class="grid-car-cell">Cell</div>
+                <div id="camry" class="grid-car-cell">
+                    <div class="image-product-section">
+                        <img class="vehicle-image" src="images/Camry.jpg">
+                    </div>
+                    <div class="vehicle-details-section" >
+                        <h1 id="vehicleTitle" class="vehicle-title"> Title </h1>
+                        <p id="vehicleMileage" class="vehicle-info-detail">Mileage:</p>
+                        <p id="vehicleFuel" class="vehicle-info-detail">Fuel-Type:</p>
+                        <p id="vehicleSeats" class="vehicle-info-detail">Seats:</p>
+                        <p id="vehicleAvailability" class="vehicle-info-detail">Availability:</p>
+                    </div>
+                    <div class="button-add-section">
+                        <button class="add-to-cart-btn" type="button">Add To Cart</button>
+                    </div>
+                </div>
                 <div class="grid-car-cell">Cell</div>
                 <div class="grid-car-cell">Cell</div>
                 <div class="grid-car-cell">Cell</div>
