@@ -3,8 +3,62 @@
     <head>
         <meta charset="utf-8">
         <title>Jaiden Chicote - Online Car Rental System</title>
+
+        <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
+        <script src="js/vehicle_list_loader.js"></script>
 
+        <!-- Runs Preliminary tasks first -->
+        <script>
+            loadJSONData();
+        </script>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar sticky">
+
+        </div>
+
+        <!-- Car Display Grid -->
+        <div class="main-content-container">
+            <div class="grid-car-container">
+                <div id="camry" class="grid-car-cell">
+                    <div class="image-product-section">
+                        <img class="vehicle-image" src="images/Camry.jpg">
+                    </div>
+                    <div class="vehicle-details-section" >
+                        <h1 id="vehicleTitle" class="vehicle-title"> Title </h1>
+                        <span style="display: block;">
+                            <p class="vehicle-info-detail"><b>Mileage:</b></p>
+                            <p id="vehicleMileage" class="vehicle-info-detail">Mileage:</p>
+                        </span>
+                        <span style="display: block;">
+                            <p class="vehicle-info-detail"><b>Fuel-Type:</b></p>
+                            <p id="vehicleFuel" class="vehicle-info-detail">Fuel-Type:</p>
+                        </span>
+                        <span style="display: block;">
+                            <p class="vehicle-info-detail"><b>Seats:</b></p>
+                            <p id="vehicleSeats" class="vehicle-info-detail">Seats:</p>
+                        </span>
+                        <span style="display: block;">
+                            <p class="vehicle-info-detail"><b>Availability:</b></p>
+                            <p id="vehicleAvailability" class="vehicle-info-detail">Availability:</p>
+                        </span>
+                    </div>
+                    <div class="button-add-section">
+                        <button class="add-to-cart-btn" type="button">Add To Cart</button>
+                    </div>
+                </div>
+                <div class="grid-car-cell">Cell</div>
+                <div class="grid-car-cell">Cell</div>
+                <div class="grid-car-cell">Cell</div>
+                <div class="grid-car-cell">Cell</div>
+                <div class="grid-car-cell">Cell</div>
+                <div class="grid-car-cell">Cell</div>
+                <div class="grid-car-cell">Cell</div>
+                <div class="grid-car-cell">Cell</div>
+                <div class="grid-car-cell">Cell</div>
+            </div>
+        </div>
     </body>
 </html>
