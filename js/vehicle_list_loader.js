@@ -14,6 +14,30 @@ function loadJSONData() {
 
 function loadVehicleGridItems(responseData) {
     for(var i = 0; i < responseData.vehicles.length; i++) {
-        console.log(i);
+        assignDataToCell(responseData.vehicles[i]);
     }
+}
+
+function assignDataToCell(JSONObject) {
+    var gridCell = document.getElementById(JSONObject.model);
+    if (gridCell == null || gridCell == undefined) return;
+
+    var title = gridCell.querySelector("#" + "vehicleTitle");
+    var milieage = gridCell.querySelector("#" + "vehicleMileage");
+    var fuel = gridCell.querySelector("#" + "vehicleFuel");
+    var seats = gridCell.querySelector("#" + "vehicleSeats");
+    var availability = gridCell.querySelector("#" + "vehicleAvailability");
+
+    title.innerHTML = JSONObject.name;
+    milieage.innerHTML = JSONObject.mileage;
+    fuel.innerHTML = JSONObject.fuelType;
+    seats.innerHTML = JSONObject.seats;
+    availability.innerHTML = availabilityOfVehicle(JSONObject.availability);
+}
+
+function availabilityOfVehicle(availability) {
+    if (availability == true) {
+        return "Yes";
+    }
+    return "No";
 }

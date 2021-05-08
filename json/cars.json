@@ -8,7 +8,7 @@
             "name": "Toyota Camry",
             "model": "camry",
             "modelYear": 2013,
-            "mileage": 100000,
+            "mileage":100000,
             "fuelType": "petrol",
             "seats": 5,
             "pricePerDay": 120,
