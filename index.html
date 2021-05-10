@@ -11,12 +11,17 @@
 
         <!-- Runs Preliminary tasks first -->
         <script>
-            loadJSONData();
+            // Lodas the cell data from JSOn file and renders with cell loader
+            JSONData.loadJSONData(GridCellLoader);
         </script>
 
         <!-- Navigation Bar -->
         <div class="nav-bar sticky">
-
+            <h3> Company Name </h3>
+            <h1 class="center-nav-label nav-element"> Car Rental Center </h1>
+            <div class="right-nav-element">
+                <a class="car-reservation nav-element" href="html/reservation.html"> Car Reservation </a>
+            </div>
         </div>
 
         <!-- Car Display Grid -->
@@ -46,7 +51,7 @@
                         </span>
                     </div>
                     <div class="button-add-section">
-                        <button class="add-to-cart-btn" type="button">Add To Cart</button>
+                        <button class="add-to-cart-btn" type="button" onclick="checkAvailableForReservation(1);">Add To Cart</button>
                     </div>
                 </div>
                 <div class="grid-car-cell">Cell</div>
@@ -60,5 +65,7 @@
                 <div class="grid-car-cell">Cell</div>
             </div>
         </div>
+
+        <script src="js/vehicle_cell_interaction.js"></script>
     </body>
 </html>
