@@ -10,6 +10,10 @@ var VehicleCart = (function() {
 
         getCart: function() {
             return cart;
+        },
+
+        emplaceCart: function(newCart) {
+            cart = newCart;
         }
     }
 })();

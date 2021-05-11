@@ -7,9 +7,38 @@
         <link rel="stylesheet" href="/css/custom.css">
     </head>
     <body>
+        <script src="/js/vehicle_list_loader.js"></script>
+        <script src="/js/Vehicle_cart.js"></script>
+        <script src="/js/vehicle_reservation.js"></script>
+        <script src="/js/web_session_storage.js"></script>
+
         <!-- Navigation Bar -->
         <div class="nav-bar sticky">
 
         </div>
+
+        <!-- Header Title Sectioon -->
+        <div>
+        </div>
+
+        <!-- Vehicle Reservation List -->
+        <div class="main-content-container">
+            <div>
+                <ul id="reservationList">
+                </ul>
+            </div>
+        </div>
+
+        <!-- Submission Section -->
+        <div>
+        </div>
+
+        <script>
+            // Retrieve Session data
+            retriveDataInSessionStorage();
+
+            VehicleReservation.loadRequestedVehicles(VehicleCart.getCart());
+            VehicleReservation.displayToReservationList();
+        </script>
     </body>
 </html>

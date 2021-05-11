@@ -21,6 +21,14 @@ var JSONData = (function() {
             ajax.send();
         },
 
+        stringfyData: function() {
+            return JSON.stringify(data);
+        },
+
+        emplaceData: function(newData) {
+            data = newData;
+        },
+
         // Gets loaded data from function
         getData: function() {
             if (data == null || data == undefined) {

@@ -20,7 +20,7 @@
             <h3> Company Name </h3>
             <h1 class="center-nav-label nav-element"> Car Rental Center </h1>
             <div class="right-nav-element">
-                <a class="car-reservation nav-element" href="html/reservation.html"> Car Reservation </a>
+                <a class="car-reservation nav-element" href="html/reservation.html" onclick="storeDataInSessionStorage()"> Car Reservation </a>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                         </span>
                     </div>
                     <div class="button-add-section">
-                        <button class="add-to-cart-btn" type="button" onclick="checkAvailableForReservation(1);">Add To Cart</button>
+                        <button class="add-to-cart-btn" type="button" onclick="reserveVehicleForRegistration(1);">Add To Cart</button>
                     </div>
                 </div>
                 <div class="grid-car-cell">Cell</div>
@@ -67,5 +67,7 @@
         </div>
 
         <script src="js/vehicle_cell_interaction.js"></script>
+        <script src="js/vehicle_cart.js"></script>
+        <script src="js/web_session_storage.js"></script>
     </body>
 </html>
