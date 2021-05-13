@@ -47,6 +47,18 @@ var JSONData = (function() {
             }
 
             return vehicleObj;
+        },
+
+        updateData: function() {
+            var ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = JSON.parse(ajax.responseText);
+                }
+            };
+
+            ajax.open("GET", "json/cars.json", true);
+            ajax.send();
         }
     };
 })();
