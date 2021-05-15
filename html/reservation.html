@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/css/custom.css">
     </head>
     <body>
+        <script src="/js/reserved_car.js"></script>
         <script src="/js/vehicle_list_loader.js"></script>
         <script src="/js/Vehicle_cart.js"></script>
         <script src="/js/vehicle_reservation.js"></script>
@@ -33,7 +34,7 @@
 
         <!-- Submission Section -->
         <div>
-            <button class="reservation-submit">Proceed to Checkout</button>
+            <button class="reservation-submit" onclick="VehicleReservation.checkoutReservation();">Proceed to Checkout</button>
         </div>
 
         <script>
@@ -41,7 +42,6 @@
             retriveDataInSessionStorage();
 
             VehicleReservation.loadRequestedVehicles(VehicleCart.getCart());
-            VehicleReservation.displayToReservationList();
         </script>
     </body>
 </html>

@@ -38,6 +38,49 @@ var VehicleReservation = (function() {
         window.location.href="/index.html";
     }
 
+    function displayToReservationList() {
+        var reservationList = document.getElementById("reservationList");
+        reservationList.appendChild(createHeaderCell());
+
+        for (var i = 0; i < reservationObj.length; i++) {
+            var createdCell = reservationObj[i].createHTMLCell();
+            reservationList.appendChild(createdCell);
+        }
+    }
+
+    function clearHTMLList() {
+        var list = document.getElementById("reservationList");
+        list.innerHTML = "";
+    }
+
+    function updateHTMLList() {
+        if (reservationObj.length == 0) {
+            emptyAlert();
+            return;
+        }
+
+        clearHTMLList();
+        displayToReservationList();
+    }
+
+    function validateRentalDays() {
+        for (var i = 0; i < reservationObj.length; i++) {
+            var htmlObj = document.getElementById(reservationObj[i].vehicleData.id);
+            var htmlInput = htmlObj.children[3];
+
+            if (htmlInput.value == 0) {
+                alert(reservationObj[i].vehicleData.name + " has no days reserved.");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function checkIfEmpty() {
+
+    }
+
     // public
     return {
 
@@ -51,80 +94,27 @@ var VehicleReservation = (function() {
                 var vehicle = new ReservedCar(JSONData.getVehicleData(cars[i]));
                 reservationObj.push(vehicle);
             }
-        },
-
-        displayToReservationList: function() {
-            var reservationList = document.getElementById("reservationList");
-            reservationList.appendChild(createHeaderCell());
-
-            for (var i = 0; i < reservationObj.length; i++) {
-                var createdCell = reservationObj[i].createHTMLCell();
-                reservationList.appendChild(createdCell);
-            }
-        },
-
-        deleteFromReservation: function(id) {
-            var tempList = [];
-            for (var i = 0; i < reservationObj) {
-                if (reservationObj[i].id != id) {
-                    tempList.push(reservationObj[i]);
-                }
-            }
-            reservationObj = tempList;
-        },
-
-        updateHTMLList: function() {
-            if (reservationObj.length == 0) {
-                emptyAlert();
-                return;
-            }
 
             displayToReservationList();
         },
 
-        clearHTMLList: function() {
-            var list = document.getElementById("reservationList");
-            list.innerHTML = "";
+        deleteFromReservation: function(id) {
+            var tempList = [];
+            for (var i = 0; i < reservationObj.length; i++) {
+                console.log(id + ", " + reservationObj[i].vehicleData.id)
+                if (reservationObj[i].vehicleData.id != id) {
+                    tempList.push(reservationObj[i]);
+                }
+            }
+
+            reservationObj = tempList;
+            updateHTMLList();
+        },
+
+        checkoutReservation: function() {
+            if (!validateRentalDays()) return;
+
+            window.location.href="/html/checkout.html";
         }
     }
 })();
-
-// Reservation Object Prefab
-class ReservedCar {
-    // Fields
-    vehicleData;
-
-    constructor(vehicleData) {
-        this.vehicleData = vehicleData;
-    }
-
-    // Methods
-    createHTMLCell() {
-        var cellObject = document.createElement("LI");
-        cellObject.classList.add("reservation-list-cell");
-
-        var cellImg = document.createElement("img");
-        var cellName = document.createElement("p");
-        var cellPrice = document.createElement("p");
-        var cellInput = document.createElement("input");
-        var cellButton = document.createElement("button");
-
-        cellImg.classList.add("reservation-thumbnail");
-        cellInput.classList.add("reservation-input-field");
-        cellButton.classList.add("reservation-delete-action");
-
-
-        cellImg.src = "/images/" + this.vehicleData.model + ".jpg";
-        cellName.innerHTML = this.vehicleData.name;
-        cellPrice.innerHTML = this.vehicleData.pricePerDay;
-        cellInput.value = 1;
-        cellButton.innerHTML = "Delete";
-
-        cellObject.appendChild(cellImg);
-        cellObject.appendChild(cellName);
-        cellObject.appendChild(cellPrice);
-        cellObject.appendChild(cellInput);
-        cellObject.appendChild(cellButton);
-        return cellObject;
-    }
-}
