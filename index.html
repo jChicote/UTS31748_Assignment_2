@@ -7,12 +7,17 @@
         <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
+        <script src="js/vehicle_cell_interaction.js"></script>
+        <script src="js/vehicle_cart.js"></script>
         <script src="js/vehicle_list_loader.js"></script>
+        <script src="js/web_session_storage.js"></script>
 
         <!-- Runs Preliminary tasks first -->
         <script>
             // Lodas the cell data from JSOn file and renders with cell loader
             JSONData.loadJSONData(GridCellLoader);
+
+            retriveDataInSessionStorage();
         </script>
 
         <!-- Navigation Bar -->
@@ -143,9 +148,5 @@
                 <div class="grid-car-cell">Cell</div>
             </div>
         </div>
-
-        <script src="js/vehicle_cell_interaction.js"></script>
-        <script src="js/vehicle_cart.js"></script>
-        <script src="js/web_session_storage.js"></script>
     </body>
 </html>

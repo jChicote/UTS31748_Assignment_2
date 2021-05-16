@@ -77,6 +77,12 @@ var VehicleReservation = (function() {
         return true;
     }
 
+    function updateVehicleDays() {
+        for (var i = 0; i < reservationObj.length; i++) {
+            reservationObj[i].updateReservedDays();
+        }
+    }
+
     function checkIfEmpty() {
 
     }
@@ -114,7 +120,17 @@ var VehicleReservation = (function() {
         checkoutReservation: function() {
             if (!validateRentalDays()) return;
 
+            updateVehicleDays();
+            storeCarReservation(reservationObj);
             window.location.href="/html/checkout.html";
+        },
+
+        getArray: function() {
+            return reservationObj;
+        },
+
+        emplaceData: function(newItems) {
+            reservationObj = newItems;
         }
     }
 })();

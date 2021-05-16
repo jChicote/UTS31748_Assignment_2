@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Jaiden Chicote - Online Car Rental System</title>
+
+        <link rel="stylesheet" href="/css/custom.css">
+    </head>
+    <body>
+        <script src="/js/Vehicle_cart.js"></script>
+        <script src="/js/vehicle_reservation.js"></script>
+        <script type="text/javascript" src="/js/order_page_functionality.js"></script>
+        <script src="/js/web_session_storage.js"></script>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar sticky">
+            <h3> Company Name </h3>
+        </div>
+
+        <!-- Vehicle Reservation List -->
+        <div class="main-content-container">
+            <!-- Customer Order Details -->
+            <div class="order-summary-content">
+                <div class="">
+                    <h2>Order Summary</h2>
+                </div>
+                <div class="">
+                    <div class="order-summary-label-layout">
+                        <table>
+                            <tr>
+                                <td>Full Name:</td>
+                                <td><p id="fullname"></p></td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td><p id="email"></p></td>
+                            </tr>
+                            <tr>
+                                <td>Purchase Date:</td>
+                                <td><p id="orderDate"></p></td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>Address:</td>
+                                <td><p id="address"></p></td>
+                            </tr>
+                            <tr>
+                                <td>Location:</td>
+                                <td><p id="cityState"></p></td>
+                            </tr>
+                            <tr>
+                                <td>Postcode:</td>
+                                <td><p id="postcode"></p></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehicle Reservation Details -->
+            <div class="">
+                <h2>Order Content</h2>
+            </div>
+            <div class="">
+                <ul id="reservationOrderList">
+
+                </ul>
+            </div>
+
+            <!-- Financing Section -->
+            <div class="">
+                <span>
+                    <p>Payment Card:</p>
+                    <p id="paymentType"></p>
+                </span>
+                <span>
+                    <p>Total Cost:</p>
+                    <p id="totalCost"></p>
+                </span>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            retriveReservationInSession();
+            loadReservedVehiclesToPage();
+        </script>
+
+    </body>
+</html>

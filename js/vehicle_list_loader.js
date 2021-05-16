@@ -28,7 +28,7 @@ var JSONData = (function() {
         emplaceData: function(newData) {
             data = newData;
         },
-
+        
         // Gets loaded data from function
         getData: function() {
             if (data == null || data == undefined) {

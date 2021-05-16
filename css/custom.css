@@ -156,3 +156,23 @@ body {
     height: 2rem;
     float: right;
 }
+
+/* Checkout CSS */
+.order-summary-content {
+    background: grey;
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
+
+.order-summary-label-layout {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.order-content {
+
+}
+
+.finance-section-content {
+
+}

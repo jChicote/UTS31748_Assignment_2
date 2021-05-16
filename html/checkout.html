@@ -7,6 +7,134 @@
         <link rel="stylesheet" href="/css/custom.css">
     </head>
     <body>
+        <script src="/js/vehicle_reservation.js"></script>
+        <script src="/js/reservation_checkout.js"></script>
+        <script src="/js/web_session_storage.js"></script>
 
+        <!-- Navigation Bar -->
+        <div class="nav-bar sticky">
+
+        </div>
+
+        <!-- Vehicle Reservation List -->
+        <div class="main-content-container">
+            <!-- Header Title Sectioon -->
+            <div style="text-align: center;">
+                <h1> Registration Checkout </h1>
+            </div>
+
+            <!-- Form Content -->
+            <div>
+                <h3> Customer Details and Payment </h3>
+            </div>
+            <div>
+                <form id="checkoutForm" onsubmit="submitCheckoutForm()">
+                    <table>
+                        <tr>
+                            <td>
+                                <label>First Name:</label>
+                            </td>
+                            <td>
+                                <input id="firstName" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Last Name:</label>
+                            </td>
+                            <td>
+                                <input id="lastName" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Email Address:</label>
+                            </td>
+                            <td>
+                                <input id="emailAddress" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Address Line 1:</label>
+                            </td>
+                            <td>
+                                <input id="firstAddress" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Address Line 2:</label>
+                            </td>
+                            <td>
+                                <input id="secondAddress" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>City:</label>
+                            </td>
+                            <td>
+                                <input id="city" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>State:</label>
+                            </td>
+                            <td>
+                                <select id="state" name="states">
+                                  <option value="nsw">New South Wales</option>
+                                  <option value="act">Australian Capital Territory</option>
+                                  <option value="mel">Melbourne</option>
+                                  <option value="qns">Queensland</option>
+                                  <option value="sa">South Australia</option>
+                                  <option value="wa">Western Australia</option>
+                                  <option value="nt">Northern Territory</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>PostCode:</label>
+                            </td>
+                            <td>
+                                <input id="postcode" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Payment Type:</label>
+                            </td>
+                            <td>
+                                <select id="payment" name="payment">
+                                  <option value="visa">VISA</option>
+                                  <option value="mastercard">Mastercard</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Rental Purchase Total Section -->
+                    <div>
+                        <h3 id="rentalTotal"> You are rquired to pay $00000 </h3>
+                    </div>
+
+                    <!-- Submission Buttons -->
+                    <div>
+                        <button onclick="returnToSelection()"> Continue Selection </button>
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+        <script>
+            // Disables default form behaviour during submission
+            var form = document.getElementById("checkoutForm");
+            form.addEventListener('submit', handleCheckoutForm);
+        </script>
     </body>
 </html>
