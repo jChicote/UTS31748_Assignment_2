@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Jaiden Chicote - Online Car Rental System</title>
+
+        <link rel="stylesheet" href="/css/custom.css">
+    </head>
+    <body>
+        <script src="/js/reserved_car.js"></script>
+        <script src="/js/vehicle_list_loader.js"></script>
+        <script src="/js/Vehicle_cart.js"></script>
+        <script src="/js/vehicle_reservation.js"></script>
+        <script src="/js/web_session_storage.js"></script>
+
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar sticky">
+
+        </div>
+
+        <!-- Vehicle Reservation List -->
+        <div class="main-content-container">
+            <!-- Header Title Sectioon -->
+            <div style="text-align: center;">
+                <h1> Car Reservation </h1>
+            </div>
+
+            <div>
+                <ul id="reservationList" class="reservation-list">
+                </ul>
+            </div>
+        </div>
+
+        <!-- Submission Section -->
+        <div>
+            <button class="reservation-submit" onclick="VehicleReservation.checkoutReservation();">Proceed to Checkout</button>
+        </div>
+
+        <script>
+            // Retrieve Session data
+            retriveDataInSessionStorage();
+
+            VehicleReservation.loadRequestedVehicles(VehicleCart.getCart());
+        </script>
+    </body>
+</html>
