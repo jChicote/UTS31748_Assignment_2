@@ -18,6 +18,10 @@ function handleCheckoutForm(event) {
 
 function submitCheckoutForm() {
     console.log("Successfully Triggered");
+    if (!checkInputValidity()) {
+
+        return;
+    }
 
     var fname = document.getElementById("firstName");
     var lname = document.getElementById("lastName");
@@ -48,6 +52,33 @@ function returnToSelection() {
     window.location.href="/index.html";
 }
 
+function checkInputValidity() {
+    var requiredInputFields = [];
+
+    var fname = document.getElementById("firstName");
+    var lname = document.getElementById("lastName");
+    var fAddress = document.getElementById("firstAddress");
+    var city = document.getElementById("city");
+    var postcode = document.getElementById("postcode");
+
+    requiredInputFields.push(fname);
+    requiredInputFields.push(lname);
+    requiredInputFields.push(fAddress);
+    requiredInputFields.push(city);
+    requiredInputFields.push(postcode);
+
+    // checks if text input fields are empty
+    for(var i = 0; i < requiredInputFields.length; i++) {
+        if (requiredInputFields[i].value == "") {
+            alert("Please complete all requried fields");
+            return false;
+        }
+    }
+
+    var email = document.getElementById("emailAddress");
+    return true;
+}
+
 function emailValidation() {
-    
+
 }

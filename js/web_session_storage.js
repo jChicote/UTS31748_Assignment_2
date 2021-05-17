@@ -12,7 +12,7 @@ function storeDataInSessionStorage() {
 function storeCheckoutDataInSessionStorage(details) {
     if (sessionStorage) {
         // Store data
-        sessionStorage.setItem("checkouit_details", JSON.stringify(details));
+        sessionStorage.setItem("checkout_details", JSON.stringify(details));
     } else {
         alert("Your browser does not support session storage.");
     }

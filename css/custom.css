@@ -169,10 +169,52 @@ body {
     grid-template-columns: 50% 50%;
 }
 
-.order-content {
+.order-content-list {
+    display: grid;
+    grid-template-rows: repeat(auto, 20%);
+    list-style-type: none;
+    padding: 0;
+}
 
+.order-list-header {
+    text-align: center;
+}
+
+.order-list-label {
+    text-align: center;
+}
+
+.order-content-list-cell {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background: beige;
 }
 
 .finance-section-content {
+    width: 100%;
+    text-align: right;
+    background: grey;
+}
 
+.payment-label {
+    display: inline-block;
+}
+
+.submission-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: right;
+    height: 4rem;
+}
+
+.submit-button {
+    background: blue;
+    color: white;
+    width: 20%;
+    height: 3rem;
+}
+
+.footer {
+    height: 3rem;
 }

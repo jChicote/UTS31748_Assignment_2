@@ -9,6 +9,7 @@
     <body>
         <script src="/js/Vehicle_cart.js"></script>
         <script src="/js/vehicle_reservation.js"></script>
+        <script src="/js/reservation_checkout.js"></script>
         <script type="text/javascript" src="/js/order_page_functionality.js"></script>
         <script src="/js/web_session_storage.js"></script>
 
@@ -20,10 +21,10 @@
         <!-- Vehicle Reservation List -->
         <div class="main-content-container">
             <!-- Customer Order Details -->
+            <div class="">
+                <h2>Reservation Summary</h2>
+            </div>
             <div class="order-summary-content">
-                <div class="">
-                    <h2>Order Summary</h2>
-                </div>
                 <div class="">
                     <div class="order-summary-label-layout">
                         <table>
@@ -36,7 +37,7 @@
                                 <td><p id="email"></p></td>
                             </tr>
                             <tr>
-                                <td>Purchase Date:</td>
+                                <td>Reservation Date:</td>
                                 <td><p id="orderDate"></p></td>
                             </tr>
                         </table>
@@ -60,30 +61,44 @@
 
             <!-- Vehicle Reservation Details -->
             <div class="">
-                <h2>Order Content</h2>
+                <h2>Reservation Content</h2>
             </div>
             <div class="">
-                <ul id="reservationOrderList">
+                <ul id="reservationOrderList" class="order-content-list">
 
                 </ul>
             </div>
 
             <!-- Financing Section -->
             <div class="">
-                <span>
-                    <p>Payment Card:</p>
-                    <p id="paymentType"></p>
-                </span>
-                <span>
-                    <p>Total Cost:</p>
-                    <p id="totalCost"></p>
-                </span>
+                <h2>Payment Summary</h2>
+            </div>
+            <div class="finance-section-content">
+                <div>
+                    <p class="payment-label">Payment Card:</p>
+                    <p id="paymentType"  class="payment-label"></p>
+                </div>
+                <div>
+                    <p class="payment-label">Total Cost:</p>
+                    <p id="totalCost"  class="payment-label"></p>
+                </div>
+            </div>
+
+            <!-- Submission Section -->
+            <div class="submission-section">
+                <button class="submit-button" type="button" name="button" onclick="completeOrder()">Submit Reservation</button>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+
             </div>
         </div>
 
         <script type="text/javascript">
+            checkoutDetails = retriveCheckoutInSession();
             retriveReservationInSession();
-            loadReservedVehiclesToPage();
+            loadReservationDetails();
         </script>
 
     </body>

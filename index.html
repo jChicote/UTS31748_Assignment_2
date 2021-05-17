@@ -17,6 +17,9 @@
             // Lodas the cell data from JSOn file and renders with cell loader
             JSONData.loadJSONData(GridCellLoader);
 
+            // Initialise Objects
+
+
             retriveDataInSessionStorage();
         </script>
 
@@ -25,7 +28,7 @@
             <h3> Company Name </h3>
             <h1 class="center-nav-label nav-element"> Car Rental Center </h1>
             <div class="right-nav-element">
-                <a class="car-reservation nav-element" href="html/reservation.html" onclick="storeDataInSessionStorage()"> Car Reservation </a>
+                <a class="car-reservation nav-element" onclick="openReservationPage()"> Car Reservation </a>
             </div>
         </div>
 
