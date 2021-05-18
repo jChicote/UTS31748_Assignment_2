@@ -36,6 +36,7 @@ var VehicleReservation = (function() {
     function emptyAlert() {
         alert("No vehicles has been registered in cart");
         window.location.href="/index.html";
+        clearAllData();
     }
 
     function displayToReservationList() {

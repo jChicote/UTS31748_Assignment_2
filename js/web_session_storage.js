@@ -55,3 +55,7 @@ function retriveCheckoutInSession() {
 function clearAllData() {
     sessionStorage.clear();
 }
+
+function modifyJSON() {
+    
+}
