@@ -44,7 +44,7 @@ function createHTMLHeader() {
     daysLabel.innerHTML = "Days";
     priceLabel.innerHTML = "Unit Price";
 
-    cellObject.classList.add("order-content-list-cell");
+    cellObject.classList.add("order-header-list-cell");
     cellObject.classList.add("order-list-header");
 
     cellObject.appendChild(thumbnailLabel);
