@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Jaiden Chicote - Online Car Rental System</title>
 
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="/css/custom.css">
     </head>
     <body>
@@ -15,43 +16,44 @@
 
         <!-- Navigation Bar -->
         <div class="nav-bar sticky">
-            <h3> Company Name </h3>
+            <h3 class="company-logo"> Hertz-UTS </h3>
+            <h1 class="center-nav-label nav-element"> Car Rental Center </h1>
         </div>
 
         <!-- Vehicle Reservation List -->
         <div class="main-content-container">
             <!-- Customer Order Details -->
-            <div class="">
+            <div class="page-headers">
                 <h2>Reservation Summary</h2>
             </div>
             <div class="order-summary-content">
                 <div class="">
                     <div class="order-summary-label-layout">
-                        <table>
+                        <table class="summary-table-format">
                             <tr>
-                                <td>Full Name:</td>
+                                <td><b>Full Name:</br></td>
                                 <td><p id="fullname"></p></td>
                             </tr>
                             <tr>
-                                <td>Email:</td>
+                                <td><b>Email:</b></td>
                                 <td><p id="email"></p></td>
                             </tr>
                             <tr>
-                                <td>Reservation Date:</td>
+                                <td><b>Reservation Date:</b></td>
                                 <td><p id="orderDate"></p></td>
                             </tr>
                         </table>
-                        <table>
+                        <table class="summary-table-format">
                             <tr>
-                                <td>Address:</td>
+                                <td><b>Address:</b></td>
                                 <td><p id="address"></p></td>
                             </tr>
                             <tr>
-                                <td>Location:</td>
+                                <td><b>Location:</b></td>
                                 <td><p id="cityState"></p></td>
                             </tr>
                             <tr>
-                                <td>Postcode:</td>
+                                <td><b>Postcode:</b></td>
                                 <td><p id="postcode"></p></td>
                             </tr>
                         </table>
@@ -60,7 +62,7 @@
             </div>
 
             <!-- Vehicle Reservation Details -->
-            <div class="">
+            <div class="page-subheader">
                 <h2>Reservation Content</h2>
             </div>
             <div class="">
@@ -70,7 +72,7 @@
             </div>
 
             <!-- Financing Section -->
-            <div class="">
+            <div class="page-subheader">
                 <h2>Payment Summary</h2>
             </div>
             <div class="finance-section-content">
@@ -84,14 +86,16 @@
                 </div>
             </div>
 
-            <!-- Submission Section -->
-            <div class="submission-section">
-                <button class="submit-button" type="button" name="button" onclick="completeOrder()">Submit Reservation</button>
-            </div>
-
             <!-- Footer -->
             <div class="footer">
 
+            </div>
+        </div>
+
+        <!-- Submission Section -->
+        <div class="bottom-sticky-bar" style="background: white; text-align: right">
+            <div class="submission-section"  style="position: relative; height: 100%;">
+                <button class="submit-button" type="button" name="button" onclick="completeOrder()">Submit Reservation</button>
             </div>
         </div>
 

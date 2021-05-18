@@ -15,6 +15,12 @@ var VehicleReservation = (function() {
         var rentLabel = document.createElement("H2");
         var actionLabel = document.createElement("H2");
 
+        thumbnailLabel.classList.add("reservation-header-labels");
+        vehicleLabel.classList.add("reservation-header-labels");
+        priceLabel.classList.add("reservation-header-labels");
+        rentLabel.classList.add("reservation-header-labels");
+        actionLabel.classList.add("reservation-header-labels");
+
         thumbnailLabel.innerHTML = "Thumbnail";
         vehicleLabel.innerHTML = "Vehicle";
         priceLabel.innerHTML = "Price";

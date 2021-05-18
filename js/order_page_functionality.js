@@ -66,7 +66,7 @@ function createOrderHTMLCell(data) {
     cellImage.src = "/images/" + data.vehicleData.model + ".jpg";
     cellName.innerHTML = data.vehicleData.name;
     cellDuration.innerHTML = data.reservedDays;
-    cellPrice.innerHTML = parseInt(data.vehicleData.pricePerDay);
+    cellPrice.innerHTML = "$" + parseInt(data.vehicleData.pricePerDay);
 
     cellObject.classList.add("order-content-list-cell");
     cellImage.classList.add("reservation-thumbnail");
