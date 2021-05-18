@@ -9,6 +9,24 @@ function storeDataInSessionStorage() {
     }
 }
 
+function storeCheckoutDataInSessionStorage(details) {
+    if (sessionStorage) {
+        // Store data
+        sessionStorage.setItem("checkout_details", JSON.stringify(details));
+    } else {
+        alert("Your browser does not support session storage.");
+    }
+}
+
+function storeCarReservation(list) {
+    if (sessionStorage) {
+        // Store data
+        sessionStorage.setItem("reservationVehicles", JSON.stringify(list));
+    } else {
+        alert("Your browser does not support session storage.");
+    }
+}
+
 function retriveDataInSessionStorage() {
     if (sessionStorage) {
         JSONData.emplaceData(JSON.parse(sessionStorage.getItem("vehicle_data")));
@@ -16,4 +34,28 @@ function retriveDataInSessionStorage() {
     } else {
         alert("Your browser does not support session storage.");
     }
+}
+
+function retriveReservationInSession() {
+    if (sessionStorage) {
+        VehicleReservation.emplaceData(JSON.parse(sessionStorage.getItem("reservationVehicles")));
+    } else {
+        alert("Your browser does not support session storage.");
+    }
+}
+
+function retriveCheckoutInSession() {
+    if (sessionStorage) {
+        return JSON.parse(sessionStorage.getItem("checkout_details"));
+    } else {
+        alert("Your browser does not support session storage.");
+    }
+}
+
+function clearAllData() {
+    sessionStorage.clear();
+}
+
+function modifyJSON() {
+    
 }

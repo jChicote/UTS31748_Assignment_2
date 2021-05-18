@@ -4,9 +4,152 @@
         <meta charset="utf-8">
         <title>Jaiden Chicote - Online Car Rental System</title>
 
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="/css/custom.css">
     </head>
     <body>
+        <script src="/js/vehicle_reservation.js"></script>
+        <script src="/js/reservation_checkout.js"></script>
+        <script src="/js/web_session_storage.js"></script>
+        <script type="text/javascript" src="/js/order_page_functionality.js"></script>
 
+        <!-- Navigation Bar -->
+        <div class="nav-bar sticky">
+            <h3 class="company-logo"> Hertz-UTS </h3>
+            <h1 class="center-nav-label nav-element"> Car Rental Center </h1>
+        </div>
+
+        <!-- Vehicle Reservation List -->
+        <div class="main-content-container" style="margin-right: 30vh; margin-left: 30vh;">
+            <!-- Header Title Sectioon -->
+            <div class="page-headers" style="text-align: center;">
+                <h1> Registration Checkout </h1>
+            </div>
+
+            <div>
+                <form id="checkoutForm" class="checkout-layout" onsubmit="submitCheckoutForm()">
+                    <div class="checkout-details">
+                        <!-- Form Content -->
+                        <div class="checkout-header">
+                            <h3> Customer Details and Payment </h3>
+                        </div>
+                        <table class="checkout-table-format">
+                            <tr class="checkout-table-row">
+                                <td class="checkout-cell-label">
+                                    <label>First Name:</label>
+                                </td>
+                                <td>
+                                    <input id="firstName" class="checkout-text-input" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkout-cell-label">
+                                    <label>Last Name:</label>
+                                </td>
+                                <td>
+                                    <input id="lastName" class="checkout-text-input" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkout-cell-label">
+                                    <label>Email Address:</label>
+                                </td>
+                                <td>
+                                    <input id="emailAddress" class="checkout-text-input" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkout-cell-label">
+                                    <label>Address Line 1:</label>
+                                </td>
+                                <td>
+                                    <input id="firstAddress" class="checkout-text-input" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkout-cell-label">
+                                    <label>Address Line 2:</label>
+                                </td>
+                                <td>
+                                    <input id="secondAddress" class="checkout-text-input" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkout-cell-label">
+                                    <label>City:</label>
+                                </td>
+                                <td>
+                                    <input id="city" class="checkout-text-input" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkout-cell-label">
+                                    <label>State:</label>
+                                </td>
+                                <td>
+                                    <select id="state" class="checkout-text-input" name="states">
+                                      <option value="nsw">New South Wales</option>
+                                      <option value="act">Australian Capital Territory</option>
+                                      <option value="mel">Melbourne</option>
+                                      <option value="qns">Queensland</option>
+                                      <option value="sa">South Australia</option>
+                                      <option value="wa">Western Australia</option>
+                                      <option value="nt">Northern Territory</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkout-cell-label">
+                                    <label>PostCode:</label>
+                                </td>
+                                <td>
+                                    <input id="postcode" class="checkout-text-input" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="checkout-cell-label">
+                                    <label>Payment Type:</label>
+                                </td>
+                                <td>
+                                    <select id="payment"  class="checkout-text-input" name="payment">
+                                      <option value="visa">VISA</option>
+                                      <option value="mastercard">Mastercard</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="checkout-summary">
+                        <!-- Rental Purchase Total Section -->
+                        <div class="checkout-header">
+                            <h3> Your Reservation </h3>
+                        </div>
+
+                        <div style="margin-left: 2rem;">
+                            <p id="rentalTotal">Total Cost: </p>
+                        </div>
+
+                        <!-- Submission Buttons -->
+                        <div class="checkout-actions">
+                            <button class="checkout-buttons" onclick="returnToSelection()"> Continue Selection </button>
+                            <input class="checkout-buttons" type="submit" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+        <script>
+            // Disables default form behaviour during submission
+            var form = document.getElementById("checkoutForm");
+            form.addEventListener('submit', handleCheckoutForm);
+
+            retriveReservationInSession();
+            var totalLabel = document.getElementById("rentalTotal");
+            totalLabel.innerHTML = "Total Cost: $" + calculateTotalCost();
+        </script>
     </body>
 </html>

@@ -3,9 +3,11 @@
 class ReservedCar {
     // Fields
     vehicleData;
+    reservedDays;
 
     constructor(vehicleData) {
         this.vehicleData = vehicleData;
+        this.reservedDays = 1;
     }
 
     // Event Handler
@@ -13,6 +15,12 @@ class ReservedCar {
         if('click' == event) {
             linkButtonEvent();
         }
+    }
+
+    updateReservedDays() {
+        var htmlObject = document.getElementById(this.vehicleData.id);
+        var inputValue = htmlObject.children[3].value;
+        this.reservedDays = inputValue;
     }
 
     // Methods

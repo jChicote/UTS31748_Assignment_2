@@ -5,7 +5,20 @@ var VehicleCart = (function() {
     // public
     return {
         addToCart: function(id) {
+            if(cart == null) {
+                cart = [];
+            }
+            
             cart.push(id);
+        },
+
+        checkInCart(id) {
+            if(cart == null || cart == undefined) return false;
+
+            for (var i = 0; i < cart.length; i++) {
+                if (cart[i] == id) return true;
+            }
+            return false;
         },
 
         getCart: function() {

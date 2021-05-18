@@ -11,13 +11,22 @@ body {
 .nav-bar {
     background-color: #333;
     overflow: hidden;
-    height: 7vh;
+    height: 8vh;
     width: 100%;
     padding: 0;
     margin: 0;
     z-index: 1;
     display: grid;
     grid-template-columns: 20% 60% 20%;
+}
+
+.bottom-sticky-bar {
+    bottom: 0;
+    width: 100%;
+    height: 8rem;
+    position: fixed;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .nav-element {
@@ -35,9 +44,19 @@ body {
     background: #3E9761;
     height: 100%;
     width: 60%;
+    border-style: none;
     text-align: center;
-    padding-top: 1.5rem;
+    padding-top: 1.7rem;
     text-decoration: none;
+    font-family: 'Montserrat' !important;
+    font-size: 18px;
+}
+
+.company-logo {
+    color: orange;
+    font-family: 'Montserrat' !important;
+    font-size: 22px;
+    margin-left: 3rem;
 }
 
 .car-reservation:hover {
@@ -47,8 +66,18 @@ body {
 .center-nav-label {
     color: white;
     text-align: center;
+    font-family: 'Montserrat' !important;
 }
 
+.page-headers {
+    margin-top: 8rem;
+    font-family: 'Montserrat' !important;
+}
+
+.page-subheader {
+    margin-top: 2rem;
+    font-family: 'Montserrat' !important;
+}
 /* Tabular Display Grid */
 
 .main-content-container {
@@ -66,7 +95,7 @@ body {
 }
 
 .grid-car-cell {
-    background: orange;
+    background: #bfbfbf;
     display: grid;
     grid-template-rows: 50% 35% 15%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -96,24 +125,31 @@ body {
     color: white;
     width: 50%;
     height: 70%;
+    border-style: none;
     margin-top: 0.5rem;
+    font-family: 'Montserrat';
+    font-size: 15px;
 }
 
 /* Cell Information */
 .vehicle-title {
     margin-top: 1rem;
+    font-family: 'Montserrat';
+    font-size: 25px;
 }
 
 .vehicle-info-detail {
     margin-top: 0;
     margin-bottom: 0;
     display: inline-block;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 /* Reservation Information CSS */
 .reservation-list {
     display: grid;
     grid-template-rows: repeat(auto, 20%);
+    grid-row-gap: 1rem;
     list-style-type: none;
 }
 
@@ -121,19 +157,28 @@ body {
     display: grid;
     grid-template-columns: 25% 25% 15% 15% 20%;
     text-align: center;
-    background: beige;
+    background: white;
     text-decoration: none;
     overflow: hidden;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    box-shadow: rgba(50, 50, 93, 0.10) 0px 13px 27px -5px, rgba(0, 0, 0, 0.15) 0px 8px 16px -8px;
+}
+
+.reservation-header-labels {
+    font-family: 'Montserrat';
 }
 
 .reservation-thumbnail {
     width: 150px;
-    height: 100%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .reservation-input-field {
+    border-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 70%;
     height: 30%;
     margin-left: auto;
@@ -142,17 +187,218 @@ body {
 }
 
 .reservation-delete-action {
-    background: blue;
+    border-style: none;
+    background: red;
     color: white;
-    width: 80%;
-    height: 30%;
+    width: 60%;
+    height: 3rem;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Montserrat';
+    font-size: 15px;
+}
+
+.reservation-delete-action, .reservation-input-field, .reservation-list-cell > p {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .reservation-submit {
+    border-style: none;
     background: blue;
     color: white;
+    height: 4rem;
+    width: 15rem;
+    margin-top: 2rem;
+    margin-bottom: auto;
+    margin-right: 5rem;
+    font-family: 'Montserrat';
+    font-size: 14px;
+}
+
+/* Checkout CSS */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 70vh;
+}
+
+.checkout-details {
+    background: grey;
+}
+
+.checkout-summary {
+    position: relative;
+    background: grey;
+    height: 50%;
+}
+
+.checkout-details, .checkout-summary {
+    margin: 1rem;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.checkout-table-format {
+    width: 80%;
+    height: 80%;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    overflow: hidden;
+}
+
+.checkout-table-row {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
+
+.checkout-cell-label {
+    padding-left: 1rem;
+}
+
+.checkout-text-input {
+    width: 100%;
     height: 2rem;
-    float: right;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.checkout-header {
+    font-family: 'Montserrat' !important;
+    font-size: 20px;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.checkout-actions {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    bottom: 2rem;
+}
+
+.checkout-buttons {
+    position: relative;
+    left: 8%;
+    width: 85%;
+    height: 3.5rem;
+    background: blue;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Order Summary CSS */
+.order-summary-content {
+    background: #f5f5f5;
+    display: grid;
+    grid-template-rows: 30% 70%;
+    box-shadow: rgba(50, 50, 93, 0.10) 0px 13px 27px -5px, rgba(0, 0, 0, 0.15) 0px 8px 16px -8px;
+}
+
+.order-summary-label-layout {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.order-content-list {
+    display: grid;
+    grid-template-rows: repeat(auto, 20%);
+    list-style-type: none;
+    grid-row-gap: 1rem;
+    padding: 0;
+}
+
+.order-list-header {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 14px;
+}
+
+.order-list-label {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    text-align: center;
+    font-family: 'Montserrat';
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.order-header-list-cell {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background: #f5f5f5;
+    box-shadow: rgba(50, 50, 93, 0.10) 0px 13px 27px -5px, rgba(0, 0, 0, 0.15) 0px 8px 16px -8px;
+}
+
+.order-content-list-cell {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background: white;
+    box-shadow: rgba(50, 50, 93, 0.10) 0px 13px 27px -5px, rgba(0, 0, 0, 0.15) 0px 8px 16px -8px;
+    height: 8rem;
+}
+
+.summary-table-format {
+    width: 80%;
+    height: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    overflow: hidden;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.finance-section-content {
+    width: 100%;
+    height: 7.5rem;
+    padding-top: 1rem;
+    text-align: right;
+    background: #f5f5f5;
+    box-shadow: rgba(50, 50, 93, 0.10) 0px 13px 27px -5px, rgba(0, 0, 0, 0.15) 0px 8px 16px -8px;
+}
+
+.payment-label-section {
+    margin-right: 4rem;
+}
+
+.payment-label {
+    display: inline-block;
+    font-family: 'Montserrat';
+    font-size: 15px;
+}
+
+.submission-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: right;
+    height: 4rem;
+}
+
+.submit-button {
+    background: blue;
+    color: white;
+    width: 15%;
+    height: 3rem;
+    margin-right: 4rem;
+    border-style: none;
+    font-family: 'Montserrat';
+    font-size: 15px;
+}
+
+.footer {
+    height: 12rem;
+}
+
+.end-content {
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    text-align: center;
 }
