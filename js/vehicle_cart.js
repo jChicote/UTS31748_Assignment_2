@@ -8,7 +8,7 @@ var VehicleCart = (function() {
             if(cart == null) {
                 cart = [];
             }
-            
+
             cart.push(id);
         },
 
@@ -27,6 +27,10 @@ var VehicleCart = (function() {
 
         emplaceCart: function(newCart) {
             cart = newCart;
+        },
+
+        clearCart: function() {
+            cart = [];
         }
     }
 })();

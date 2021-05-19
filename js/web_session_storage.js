@@ -9,6 +9,24 @@ function storeDataInSessionStorage() {
     }
 }
 
+function storeJSONData() {
+    if (sessionStorage) {
+        // Store data
+        sessionStorage.setItem("vehicle_data", JSONData.stringfyData());
+    } else {
+        alert("Your browser does not support session storage.");
+    }
+}
+
+function storeVehicleCart() {
+    if (sessionStorage) {
+        // Store data
+        sessionStorage.setItem("vehicle_cart", JSON.stringify(VehicleCart.getCart()));
+    } else {
+        alert("Your browser does not support session storage.");
+    }
+}
+
 function storeCheckoutDataInSessionStorage(details) {
     if (sessionStorage) {
         // Store data
@@ -53,9 +71,11 @@ function retriveCheckoutInSession() {
 }
 
 function clearAllData() {
-    sessionStorage.clear();
-}
+    //sessionStorage.clear();
+    VehicleReservation.clearReservation();
+    VehicleCart.clearCart();
 
-function modifyJSON() {
-    
+    storeCheckoutDataInSessionStorage([]);
+    storeCarReservation(VehicleReservation.getArray());
+    storeVehicleCart();
 }

@@ -13,23 +13,12 @@
         <script src="js/vehicle_list_loader.js"></script>
         <script src="js/web_session_storage.js"></script>
 
-        <!-- Runs Preliminary tasks first -->
-        <script>
-            // Lodas the cell data from JSOn file and renders with cell loader
-            JSONData.loadJSONData(GridCellLoader);
-
-            // Initialise Objects
-
-
-            retriveDataInSessionStorage();
-        </script>
-
         <!-- Navigation Bar -->
         <div class="nav-bar sticky">
             <h3 class="company-logo"> Hertz-UTS </h3>
             <h1 class="center-nav-label nav-element"> Car Rental Center </h1>
             <div class="right-nav-element">
-                <a class="car-reservation nav-element" onclick="openReservationPage()"> Car Reservation </a>
+                <a class="car-reservation nav-element" onclick="openReservationPage()">Car Reservation</a>
             </div>
         </div>
 
@@ -40,7 +29,7 @@
                     <div class="image-product-section">
                         <img class="vehicle-image" src="images/Camry.jpg">
                     </div>
-                    <div class="vehicle-details-section" >
+                    <div class="vehicle-details-section">
                         <h1 id="vehicleTitle" class="vehicle-title"> Title </h1>
                         <span style="display: block;">
                             <p class="vehicle-info-detail"><b>Mileage:</b></p>
@@ -308,5 +297,19 @@
                 </div>
             </div>
         </div>
+
+        <!-- Runs Preliminary tasks first -->
+        <script>
+            retriveDataInSessionStorage();
+            //JSONData.loadJSONData(GridCellLoader);
+            //GridCellLoader.loadVehicleGridItems(JSONData.getData());
+            // Lodas the cell data from JSOn file and renders with cell loader
+            if (JSONData.getData() == null) {
+                console.log("was null")
+                JSONData.loadJSONData(GridCellLoader);
+            } else {
+                GridCellLoader.loadVehicleGridItems(JSONData.getData());
+            }
+        </script>
     </body>
 </html>

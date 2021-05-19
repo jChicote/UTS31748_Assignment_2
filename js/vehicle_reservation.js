@@ -138,6 +138,10 @@ var VehicleReservation = (function() {
 
         emplaceData: function(newItems) {
             reservationObj = newItems;
+        },
+
+        clearReservation: function() {
+            reservationObj = [];
         }
     }
 })();

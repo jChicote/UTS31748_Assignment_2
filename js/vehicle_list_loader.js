@@ -5,6 +5,17 @@ var JSONData = (function() {
     // privates
     var data;
 
+    function findVehicleInArray(id) {
+        var vehicleObj;
+        for (var i = 0; i < data.vehicles.length; i++) {
+            if (data.vehicles[i].id == id) {
+                vehicleObj = data.vehicles[i];
+            }
+        }
+
+        return vehicleObj;
+    }
+
     // public
     return {
 
@@ -28,7 +39,7 @@ var JSONData = (function() {
         emplaceData: function(newData) {
             data = newData;
         },
-        
+
         // Gets loaded data from function
         getData: function() {
             if (data == null || data == undefined) {
@@ -39,14 +50,7 @@ var JSONData = (function() {
         },
 
         getVehicleData: function(id) {
-            var vehicleObj;
-            for (var i = 0; i < data.vehicles.length; i++) {
-                if (data.vehicles[i].id == id) {
-                    vehicleObj = data.vehicles[i];
-                }
-            }
-
-            return vehicleObj;
+            return findVehicleInArray(id);
         },
 
         updateData: function() {
@@ -59,6 +63,17 @@ var JSONData = (function() {
 
             ajax.open("GET", "json/cars.json", true);
             ajax.send();
+        },
+
+        // Updates the availablility of vehicles to false
+        updateJSONValues: function(reservationList) {
+            for (var i = 0; i < data.vehicles.length; i++) {
+                for (var j = 0; j < reservationList.length; j++) {
+                    if(data.vehicles[i].id == reservationList[j].vehicleData.id){
+                        data.vehicles[i].availability = false;
+                    }
+                }
+            }
         }
     };
 })();
