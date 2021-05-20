@@ -1,4 +1,5 @@
 
+// Object encapsulating related methods and data for reservation
 var VehicleReservation = (function() {
 
     // Fields
@@ -60,6 +61,7 @@ var VehicleReservation = (function() {
         list.innerHTML = "";
     }
 
+    // updates html list when a change occurs
     function updateHTMLList() {
         if (reservationObj.length == 0) {
             emptyAlert();
@@ -88,10 +90,6 @@ var VehicleReservation = (function() {
         for (var i = 0; i < reservationObj.length; i++) {
             reservationObj[i].updateReservedDays();
         }
-    }
-
-    function checkIfEmpty() {
-
     }
 
     // public

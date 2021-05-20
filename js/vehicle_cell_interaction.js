@@ -2,7 +2,10 @@
 function reserveVehicleForRegistration(vehicleID) {
     var vehicleObj = JSONData.getVehicleData(vehicleID);
 
-    if (VehicleCart.checkInCart(vehicleObj.id)) return;
+    if (VehicleCart.checkInCart(vehicleObj.id)) {
+        alert("Already in cart");
+        return;
+    }
 
     if (vehicleObj.availability) {
         VehicleCart.addToCart(vehicleID);

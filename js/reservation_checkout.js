@@ -12,6 +12,7 @@ var checkoutDetails = {
     paymentType: ""
 };
 
+// prevents default form behaviour from executing page refresh
 function handleCheckoutForm(event) {
     event.preventDefault();
 }
@@ -47,6 +48,7 @@ function submitCheckoutForm() {
     window.location.href="/html/order_result.html";
 }
 
+// returns current page to root page
 function returnToSelection() {
     window.location.href="/index.html";
 }
