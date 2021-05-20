@@ -19,7 +19,6 @@ function handleCheckoutForm(event) {
 function submitCheckoutForm() {
     console.log("Successfully Triggered");
     if (!checkInputValidity()) {
-
         return;
     }
 
@@ -60,6 +59,7 @@ function checkInputValidity() {
     var fAddress = document.getElementById("firstAddress");
     var city = document.getElementById("city");
     var postcode = document.getElementById("postcode");
+    var email = document.getElementById("emailAddress");
 
     requiredInputFields.push(fname);
     requiredInputFields.push(lname);
@@ -67,18 +67,42 @@ function checkInputValidity() {
     requiredInputFields.push(city);
     requiredInputFields.push(postcode);
 
+    //checks whether postcode is a number
+    if (!checkForCompletedFields(requiredInputFields) || !emailValidation(email.value) || !validatePostcode(postcode.value)) {
+        return false;
+    }
+
+    return true;
+}
+
+function checkForCompletedFields(requiredInputFields) {
     // checks if text input fields are empty
     for(var i = 0; i < requiredInputFields.length; i++) {
         if (requiredInputFields[i].value == "") {
+            console.log("is false");
             alert("Please complete all requried fields");
             return false;
         }
     }
-
-    var email = document.getElementById("emailAddress");
     return true;
 }
 
-function emailValidation() {
+function validatePostcode(postcodeString) {
+    let postExp = /^[0-9]+$/
+    if (!postExp.test(postcodeString)) {
+        alert("Postcode only allows numbers")
+        return false;
+    }
 
+    return true;
+}
+
+function emailValidation(emailString) {
+    let regEmailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!regEmailFilter.test(emailString)) {
+        alert("Please input a valid email")
+        return false;
+    }
+
+    return true;
 }

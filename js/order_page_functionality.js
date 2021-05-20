@@ -102,7 +102,14 @@ function calculateTotalCost() {
     return total;
 }
 
+function saveJSONData() {
+    retriveDataInSessionStorage();
+    JSONData.updateJSONValues(VehicleReservation.getArray());
+    storeDataInSessionStorage();
+}
+
 function completeOrder() {
+    saveJSONData();
     clearAllData();
     window.location.href="conclusion.html";
 }
