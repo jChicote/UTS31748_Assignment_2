@@ -1,3 +1,5 @@
+
+// Object for encapsulating cart related methods and data
 var VehicleCart = (function() {
     // private
     var cart = [];

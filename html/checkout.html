@@ -26,8 +26,7 @@
                 <h1> Registration Checkout </h1>
             </div>
 
-            <div>
-                <form id="checkoutForm" class="checkout-layout" onsubmit="submitCheckoutForm()">
+            <div id="checkoutForm" class="checkout-layout">
                     <div class="checkout-details">
                         <!-- Form Content -->
                         <div class="checkout-header">
@@ -133,10 +132,9 @@
                         <!-- Submission Buttons -->
                         <div class="checkout-actions">
                             <button class="checkout-buttons" onclick="returnToSelection()"> Continue Selection </button>
-                            <input class="checkout-buttons" type="submit" value="Submit">
+                            <button class="checkout-buttons" type="button" onclick="submitCheckoutForm()">Submit</button>
                         </div>
                     </div>
-                </form>
             </div>
 
 

@@ -98,6 +98,7 @@ var GridCellLoader = (function() {
         availability.innerHTML = availabilityOfVehicle(JSONObject.availability);
     }
 
+    // returns string representation of boolean availability
     function availabilityOfVehicle(availability) {
         if (availability == true) {
             return "Yes";
